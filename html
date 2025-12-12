@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABSK Bible Study: Communal Myth-Making</title>
+    <style>
+        :root {
+            --primary-color: #9F7AEA;
+            --secondary-color: #805AD5;
+            --accent-color: #38B2AC;
+            --background-light: #F7FAFC;
+            --text-dark: #2D3748;
+            --text-light: #fff;
+            --max-width: 1200px;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            background-color: var(--secondary-color);
+            padding: 10px 0;
+        }
+
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: var(--max-width);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .nav-list li a {
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 8px 15px;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-list li a:hover, .nav-list li a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        main {
+            padding: 40px 20px;
+            margin: 0 auto;
+            max-width: var(--max-width);
+        }
+
+        .content-section {
+            display: none;
+            padding: 40px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            min-height: 600px;
+            margin-bottom: 30px;
+        }
+
+        .hero-banner {
+            background: linear-gradient(135deg, #9F7AEA 0%, #38B2AC 100%);
+            color: var(--text-light);
+            text-align: center;
+            padding: 100px 20px;
+            margin: -40px -40px 40px -40px;
+            border-radius: 8px 8px 0 0;
+            position: relative;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px 8px 0 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-content h2 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .core-concepts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .concept-card {
+            background: linear-gradient(135deg, #ffffff 0%, #F7FAFC 100%);
+            padding: 20px;
+            border-radius: 6px;
+            border-top: 4px solid var(--accent-color);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(159, 122, 234, 0.3);
+        }
+
+        .concept-card h3 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+
+        .key-question-box {
+            background: linear-gradient(135deg, #E9D8FD 0%, #B2F5EA 100%);
+            padding: 25px;
+            border-left: 5px solid var(--primary-color);
+            font-style: italic;
+            margin: 30px 0;
+            font-size: 1.1em;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .ethnographic-vignette {
+            background-color: #EDF2F7;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: var(--text-dark);
+            color: var(--background-light);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h2 {
+                font-size: 2em;
+            }
+
+            .nav-list {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ABSK Bible Study: Communal Myth-Making Through Exegesis</h1>
+    </header>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="#" class="nav-link active" data-page="home">1. Project Overview</a></li>
+            <li><a href="#" class="nav-link" data-page="scene">2. Setting the Scene</a></li>
+            <li><a href="#" class="nav-link" data-page="text">3. Shared Meaning-Making</a></li>
+            <li><a href="#" class="nav-link" data-page="ritual">4. Ritual & Embodied Faith</a></li>
+            <li><a href="#" class="nav-link" data-page="purity">5. Purity & Inclusion</a></li>
+            <li><a href="#" class="nav-link" data-page="conclusion">6. Conclusion & References</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section id="home" class="content-section" style="display: block;">
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <h2>Reading, Relating, and Making Community</h2>
+                    <p>An anthropological analysis of the Wellesley College Asian Baptist Student Koinonia (ABSK) Bible Study.</p>
+                </div>
+            </div>
+
+            <h2>Project Summary</h2>
+            <p>This platform integrates ethnographic field notes with anthropological theory to argue that the ABSK Bible Study is a "ritual and pedagogical religious event" that functions as <strong>communal myth-making</strong> through shared exegesis. The members collectively produce meaning from scripture, using this shared process to build a sense of belonging and interpret their spiritual and social lives. The process of making meaning becomes the process of making community.</p>
+            
+            <div class="key-question-box">
+                How does reading an ancient text build a contemporary community?
+            </div>
+
+            <h2>Core Concepts Highlight</h2>
+            <div class="core-concepts-grid">
+                <div class="concept-card">
+                    <h3>Myth-Making</h3>
+                    <p>The shared interpretation of the Gospel of John's "good shepherd" line gives them a shared story they can use to think through issues like trust, moral leadership, and how to find direction.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Exegesis as Ritual</h3>
+                    <p>The practice transforms the Bible from a fixed document into a living, shared process where text, feelings, and relationships come together.</p>
+                </div>
+                <div class="concept-card">
+                    <h3>Ritual Reciprocity</h3>
+                    <p>Through singing and prayer, the group creates an embodied, personal relationship with God, moving beyond a purely intellectual task.</p>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="scene" class="content-section">
+            <h2>The Weekly Gathering: An Ethnographic Snapshot</h2>
+            <p>The Bible Study takes place on a Friday night (10/10/2025) in classroom 415 of the Lulu Wang Center at Wellesley College. The room is softly lit, and seventeen women arrange themselves in a circle, some sitting on the floor, others on desks and chairs.</p>
+
+            <h3>The Participants</h3>
+            <ul>
+                <li>The group consists of eleven Wellesley College undergraduate students and five Wellesley ABSK staff (alumni who rejoined to help with administration). All participants are women.</li>
+                <li>Most members come from a Korean background, with many having grown up in the Antioch Baptist Church.</li>
+                <li>The group includes four people from a Chinese background, two exchange students from Korea (Seoul National University and Yonsei University), and two people from Africa and Brazil.</li>
+            </ul>
+
+            <h3>The Ritual Progression</h3>
+            <div class="ethnographic-vignette">
+                <p>The event starts around 7:40 pm after members chat about their week. Cindy opens with a prayer, asking God to "open our hearts and our minds tonight as we read Your Word together". The room falls quiet, eyes close, and heads bow slightly.</p>
+                <p>Two ABSK staff members play the guitar and piano, leading the group to sing three songs. "Thy Word" is sung every week as their theme song of the year.</p>
+                <p>After announcements, the two-hour-long Bible Study and discussion begin. The event ends with a closing prayer, and members stay to eat dinner and play games together, performing "community-making".</p>
+            </div>
+            
+        </section>
+
+        <section id="text" class="content-section">
+            <h2>Interpreting the Word: Creating a Moral Compass</h2>
+            <p>The Bible Study centers on the Gospel of John, specifically chapter 10: "I Am the Good Shepherd". The collective process of reading and discussion transforms the ancient text into a contemporary moral guide.</p>
+
+            <h3>Exegesis as Myth-Making</h3>
+            <p>The discussion allows the group to collectively produce meaning from the scripture. Anthropologists like Lévi-Strauss and Malinowski view religious texts as systems that help people understand the world and guide behavior.</p>
+            <p>For the ABSK members, their attention to the "good shepherd" line provides a shared story to think through issues like trust, moral leadership, and finding direction. The text is not just something to read; it is something to experience through discussion and emotional engagement.</p>
+
+            <div class="ethnographic-vignette">
+                <p>After reading the passage, Christine SMN asks the members to split into groups to find 5 key verses, a question, and an answer in 10 minutes.</p>
+                <p>During the small-group discussion, some members patiently explained the metaphors to others: the good shepherd is Jesus, the door to the truth; the sheep are His people.</p>
+            </div>
+
+            <h3>A Model for Life (Geertz 1973)</h3>
+            <p>The interpretation of the text acts as what Clifford Geertz describes as both a "model of the world and a 'model for' how to live". By interpreting the Bible as a group, they create a symbolic world where faith and community strengthen one another.</p>
+            
+            <table>
+                <caption>Key Metaphors and Interpretation</caption>
+                <thead>
+                    <tr>
+                        <th>Concept</th>
+                        <th>Biblical Meaning</th>
+                        <th>Group Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>The Good Shepherd</td>
+                        <td>Jesus, who knows and loves his sheep by name.</td>
+                        <td>Moral leader; the one who leads us onto the right path.</td>
+                    </tr>
+                    <tr>
+                        <td>The Sheep</td>
+                        <td>His people.</td>
+                        <td>Believers who should seek to know everything about God and listen for His voice.</td>
+                    </tr>
+                    <tr>
+                        <td>The Door</td>
+                        <td>The way to salvation.</td>
+                        <td>The door to the truth; the route to be saved.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="ritual" class="content-section">
+            <h2>Beyond the Intellect: An Embodied Relationship with God</h2>
+            <p>The Bible Study is characterized by ritual acts—singing, praying, and studying—that create an embodied and personal connection with the divine. This process transforms the study into an emotional and spiritual practice.</p>
+
+            <h3>Ritual Reciprocity</h3>
+            <p>This ritual side of the ABSK's study is similar to the idea of <em>darshan</em> in Hindu traditions, where the worshipper sees the deity and is also "seen" by the deity through a shared emotional and sensory experience.</p>
+            <p>When Cindy prays, the group invites God into the space where interpretation happens. The singing of their theme song, "Thy Word," blends the text with people's emotions.</p>
+            <ul>
+                <li>Interpreting the Bible becomes a form of worship, and worship is a way of interpreting.</li>
+                <li>Every act of reflection becomes a way of seeing God through scripture and feeling "seen" in return.</li>
+                <li>Studying the text is another form of prayer—a way of making God present, not just understanding words on a page.</li>
+            </ul>
+
+            <div class="ethnographic-vignette">
+                <p>Christine SMN shared a personal story about her brother not believing her during a house fire, using it as a metaphor for Jesus's sadness when the Jews didn't believe Him as God. When she shares this personal reflection, the room grows quiet again.</p>
+                <p>The closing prayer feels heavier with the reflection and weight of two hours grappling with the ancient text and its meaning. Jane then prays about the words she learned from God that night.</p>
+            </div>
+            
+        </section>
+
+        <section id="purity" class="content-section">
+            <h2>Purity and Process: Constructing the Boundaries of "Us"</h2>
+            <p>The process of creating shared meaning is a constant effort to keep the group's "symbolic order" intact. Belonging in ABSK is not determined by origin or prior knowledge, but by the relational act of joining the conversation.</p>
+
+            <h3>The Inclusionary Moment</h3>
+            <div class="ethnographic-vignette">
+                <p>Midway through the discussion, the exchange students from Korea looked confused when the "shepherd and the sheep" metaphor was brought up. One person admitted she didn't know anything about shepherds.</p>
+                <p>This moment, where familiar Bible language was shown to be culturally shaped, led to a longer discussion as others patiently explained the metaphor. This confusion actually brought everyone closer as they rebuilt the meaning together.</p>
+            </div>
+            <p><em>The Problem with Purity</em> (Wu 2023) posits that purity is a category for deciding who is "in" and who is "out". In ABSK, being "in" means being willing to ask questions and discuss God's words together. By helping each other translate, explain, and reinterpret, members continually create a sense of "us"—people who share a common way of understanding and talking about their faith.</p>
+
+            <h3>Discipline and the Protestant Ethic</h3>
+            <p>The fixed schedule of the Bible Study—beginning with prayer, reading, discussion, and reflection—reflects the Protestant ethic discussed by Max Weber. Regular commitment is seen as a moral duty.</p>
+            <p>However, this sense of individual discipline is reshaped by cultural influences in this mostly East Asian, mostly female group. The conversations are collaborative and highly group-oriented. It becomes a mix of individual devotion and collective values, where faith is expressed through the cooperative work of making meaning as a community.</p>
+        </section>
+
+        <section id="conclusion" class="content-section">
+            <h2>Synthesis and Conclusion</h2>
+            <p>The ABSK Bible Study is illuminated as a powerful example of communal myth-making through exegesis. Meaning is not merely received; it is actively created together by the participants.</p>
+
+            <h3>Final Insights</h3>
+            <ul>
+                <li><strong>Shared Story:</strong> The group takes an old text and turns it into a contemporary moral guide. The "good shepherd" passage becomes a lens they use to understand themselves, their faith, and their place in the community.</li>
+                <li><strong>Ritual and Relationship:</strong> Through prayer and singing, they establish a personal relationship with the divine.</li>
+                <li><strong>Community Building:</strong> Collaborative interpretation keeps the group on the same page, while disciplined study aligns them around shared values.</li>
+            </ul>
+            <p>Reading side by side becomes a way of belonging, and the process of making meaning becomes the process of making community.</p>
+
+            <h2>References</h2>
+            <ol>
+                <li>Douglas, Mary. <em>Purity and Danger: An Analysis of Concepts of Pollution and Taboo</em>. Routledge, 1966.</li>
+                <li>Eck, Diana L. <em>Darsan: Seeing the Divine Image in India</em>. 3rd ed., Columbia University Press, 1998.</li>
+                <li>Geertz, Clifford. <em>The Interpretation of Cultures</em>. Basic Books, 1973.</li>
+                <li>Lévi-Strauss, Claude. "The Structural Study of Myth." <em>The Journal of American Folklore</em>, vol. 68, no. 270, 1955, pp. 428-44.</li>
+                <li>Malinowski, Bronislaw. <em>Myth in Primitive Psychology</em>. Norton, 1926.</li>
+                <li>Weber, Max. <em>The Protestant Ethic and the Spirit of Capitalism</em>. Translated by Talcott Parsons, Scribner, 1930.</li>
+                <li>Wu. <em>The Problem with Purity</em>. University of Chicago Press, 2023.</li>
+            </ol>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Cynthia (Yuning) Zhu | ANTH 233 Final Project</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.target.getAttribute('data-page');
+
+                    sections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+
+                    navLinks.forEach(nav => {
+                        nav.classList.remove('active');
+                    });
+
+                    document.getElementById(targetId).style.display = 'block';
+                    e.target.classList.add('active');
+
+                    document.querySelector('main').scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
